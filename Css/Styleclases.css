@@ -1,0 +1,58 @@
+.contenedor-imagenes {
+  position: relative;
+}
+
+h1 {
+  color: #fff; /* Cambia el color del texto */
+  background-color: #3c3164; /* Cambia el color de fondo */
+  padding: 10px; /* Agrega un relleno alrededor del texto */
+}
+
+h3 {
+  color: #ffffff; /* Cambia el color del texto */
+  background-color: #643131; /* Cambia el color de fondo */
+  padding: 10px; /* Agrega un relleno alrededor del texto */
+}
+
+p {
+  color: #ffffff; /* Cambia el color del texto */
+  background-color: #316439; /* Cambia el color de fondo */
+  padding: 10px; /* Agrega un relleno alrededor del texto */
+}
+
+body {
+  font-size: 15px;  /*1 1rem = 10px */
+  font-family: 'Krub', sans-serif;
+  background-color: #636431;
+  text-align: center;
+}
+
+
+.imagen1 {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.imagen2 {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+}
+
+.imagen3 {
+  position: absolute;
+  top: 200px;
+  left: 900px;
+}
+
+.ajustar-goku img {
+  width: 300px;
+  height: auto;
+  border: 5px solid black;
+  margin: 300px;
+}
+
+.texto {
+  margin: 0;
+}
