@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Registros de Alumnos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <h5 class="card-header text-center">Registros de Alumnos</h5>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>RUT</th>
+                            <th>Correo electrónico</th>
+                            <th>Nombres</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Celular</th>
+                            <th>Sexo</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Dirección</th>
+                            <th>Comuna</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registrosBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cargar el archivo JSON y mostrar los registros en la tabla
+        fetch('registros.json')
+            .then(response => response.json())
+            .then(data => {
+                const registrosBody = document.getElementById('registrosBody');
+                data.forEach(registro => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${registro.RUT}</td>
+                        <td>${registro['Correo electrónico']}</td>
+                        <td>${registro.Nombres}</td>
+                        <td>${registro['Apellido Paterno']}</td>
+                        <td>${registro['Apellido Materno']}</td>
+                        <td>${registro.Celular}</td>
+                        <td>${registro.Sexo}</td>
+                        <td>${registro['Fecha de Nacimiento']}</td>
+                        <td>${registro.Dirección}</td>
+                        <td>${registro.Comuna}</td>
+                    `;
+                    registrosBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
